@@ -1,12 +1,10 @@
-import flask
+from flask import Flask
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 names = "tomer leibovitch\nliad mizrahi\nitay shitrit\nron limor\nshaked stern"
-
-@app.route('/check')
-def returnNames():
+@app.route("/")
+def hello_world():
     return names
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host='0.0.0.0')
